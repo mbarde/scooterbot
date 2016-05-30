@@ -1,0 +1,22 @@
+{
+  "name": "Scooter Bot",
+  "description": "A robot that randomly tweets parts of Scooter lyrics.",
+  "main": "index.js",
+  "dependencies": {
+    "tuiter": "~0.2.12",
+    "express": "~4.9.0",
+	"mongoose": "~3.8.8"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "author": {
+    "name": "Matthias Barde",
+    "email": "matthiasbarde@gmx.de"
+  },
+  "private": true,
+  "license": "MIT"
+}
