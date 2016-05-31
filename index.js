@@ -18,13 +18,13 @@ app.listen(process.env.PORT || 5000);
 //
 // Config.keys uses environment variables so sensitive info is not in the repo.
 var config = {
-    me: '@mistavistaMB',
+    me: '@ScooterLyrics',
 
     keys: {
-        consumer_key: "5woRxFSq0fKwQgtJvlKbJ42Mn",
-        consumer_secret: "TUT6avRascoWAzGnrZ0nIRORFCUDbc9mH2t6rLmJYlWcqbXV9r",
-        access_token_key: "4172412377-lBVrIjM86t8NkUiVvqKfAStHxnec4q1c9zYo82v",
-        access_token_secret: "IqQgHgWVnlhzcllTnH1wFRvwRGVyHxRCvRDy7jR73Y11v"
+        consumer_key: "TU9yGkrvdhLb6AF1Wb3QxtpzV",
+        consumer_secret: "XISV7ac4tdaOuhVIRCD80OuIoeD1qm2ACYPlzHJdkLQMcDfLlV",
+        access_token_key: "737623113563660289-92YXvB7DyiAHpR9HvsUQefk4bfdSMpt",
+        access_token_secret: "d3A2UZF7jZM4Z1MkzEEaE5lsxaERBZz1NFSjwC0FunwsG"
     },
 };
 
