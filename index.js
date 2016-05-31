@@ -40,7 +40,7 @@ function onTweet(err) {
 function tweet(res) {
 	db.modelQuote.count({} , function(err, result){
 		if(err) {
-			consoloe.error(err);
+			console.error(err);
 		}
 		var count = result;
 		var random = Math.floor(Math.random() * count);
