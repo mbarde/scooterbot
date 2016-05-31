@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongodbURL = 'mongodb://localhost/tesAAAt';
+mongodbURL = 'mongodb://scooterbot:k0ll4ps@ds019633.mlab.com:19633/heroku_mwwmt2k4';
 var mongodbOptions = { };
 
 mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
