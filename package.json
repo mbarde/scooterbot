@@ -1,0 +1,9 @@
+{
+  "name": "ScooterBot",
+  "description": "A robot that randomly tweets parts of Scooter lyrics.",
+  "main": "api/index.js",
+  "author": {
+    "name": "Matthias Barde",
+    "email": "matthiasbarde@gmx.de"
+  }
+}
