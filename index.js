@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.get('/', function(req, res){
   var date = new Date();
   var hour = date.getHours();
-  if ([8, 12, 19, 20, 22].indexOf(hour) > -1) {
+  if ([8, 12, 20].indexOf(hour) > -1) {
   	tweet(res);
   } else {
     res.send("No tweet at this hour: " + hour);
