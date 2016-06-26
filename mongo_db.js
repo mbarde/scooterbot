@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
-mongodbURL = 'mongodb://scooterbot:f1schf4ng@ds019633.mlab.com:19633/heroku_mwwmt2k4';
+mongodbURL = process.env.MONGODB_URI;
 var mongodbOptions = { };
 
 mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
-    if (err) { 
+    if (err) {
         console.log('Connection refused to ' + mongodbURL);
         console.log(err);
     } else {
@@ -14,13 +14,13 @@ mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
 // Schemas
 var Song = new mongoose.Schema({
 	title: { type: String, required: true }
-	// year? album? 
+	// year? album?
 });
 
 var Quote = new mongoose.Schema({
 	text: { type: String, required: true },
 	song: { type: mongoose.Schema.ObjectId, ref: 'Song' }
-	// tweeted count 
+	// tweeted count
 });
 
 // Models

@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.get('/', function(req, res){
   var date = new Date();
   var hour = date.getHours();
-  if ([8, 12, 22].indexOf(hour) > -1) {
+  if ([8, 12, 19, 20, 22].indexOf(hour) > -1) {
   	tweet(res);
   } else {
     res.send("No tweet at this hour: " + hour);
@@ -25,14 +25,6 @@ app.listen(process.env.PORT || 5000);
 // Config.keys uses environment variables so sensitive info is not in the repo.
 var config = {
     me: '@ScooterLyrics',
-    /**
-    keys: {
-        consumer_key: "TU9yGkrvdhLb6AF1Wb3QxtpzV",
-        consumer_secret: "XISV7ac4tdaOuhVIRCD80OuIoeD1qm2ACYPlzHJdkLQMcDfLlV",
-        access_token_key: "737623113563660289-92YXvB7DyiAHpR9HvsUQefk4bfdSMpt",
-        access_token_secret: "d3A2UZF7jZM4Z1MkzEEaE5lsxaERBZz1NFSjwC0FunwsG"
-    }
-    **/
     keys: {
         consumer_key: process.env.TWITTER_CONSUMER_KEY,
         consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
