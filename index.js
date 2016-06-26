@@ -4,10 +4,16 @@ var bodyParser = require('body-parser');
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
  	extended: true
-})); 
+}));
 
-app.get('/', function(req, res){ 
-	tweet(res);
+app.get('/', function(req, res){
+  var date = new Date();
+  var hour = date.getHours();
+  if ([8, 12, 22].indexOf(hour) > -1) {
+  	tweet(res);
+  } else {
+    res.send("No tweet at this hour: " + hour);
+  }
 });
 app.post('/add_song', function(req, res) {
 	add_song(req, res);
@@ -50,8 +56,8 @@ function tweet(res) {
 				tu.update({status: result.text}, onTweet);
 				res.send(result.text);
 		});
-	});	
-	
+	});
+
 };
 
 // Add song to database.
@@ -61,16 +67,16 @@ function add_song(req, res) {
 	song.title = req.body.title;
 	song.save(function(err, song) {
 		if (err) { console.log(err); }
-	
+
 		quotes = req.body.lyrics.split("\n");
-		
+
 		for (var i = 0; i < quotes.length; i++) {
 			text = quotes[i].trim();
 			if ( text.length > 0 && text.length  < 137 ) {
 				var quote = new db.modelQuote();
 				quote.text = text;
 				quote.song = song.id;
-				
+
 				quote.save(function(err) {
 					if (err) { console.log(err); }
 				});
@@ -79,7 +85,7 @@ function add_song(req, res) {
 				console.log('Quote too long: ' + text);
 			}
 		}
-	
+
 		return res.sendStatus(200);
 	});
 }
