@@ -25,13 +25,20 @@ app.listen(process.env.PORT || 5000);
 // Config.keys uses environment variables so sensitive info is not in the repo.
 var config = {
     me: '@ScooterLyrics',
-
+    /**
     keys: {
         consumer_key: "TU9yGkrvdhLb6AF1Wb3QxtpzV",
         consumer_secret: "XISV7ac4tdaOuhVIRCD80OuIoeD1qm2ACYPlzHJdkLQMcDfLlV",
         access_token_key: "737623113563660289-92YXvB7DyiAHpR9HvsUQefk4bfdSMpt",
         access_token_secret: "d3A2UZF7jZM4Z1MkzEEaE5lsxaERBZz1NFSjwC0FunwsG"
-    },
+    }
+    **/
+    keys: {
+        consumer_key: process.env.TWITTER_CONSUMER_KEY,
+        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+        access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+        access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+    }
 };
 
 // What to do after we tweet something.
